@@ -5,10 +5,25 @@ def linear_search(arr, target):
     return -1   # not found
 
 
+
 # Write an iterative implementation of Binary Search
 def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
 
-    # Your code here
-
+    while low <= high:
+        middle = (low + high) // 2
+        guess = arr[middle]
+        if guess == target:
+            return middle
+        if guess > target:
+            high = middle - 1
+        else:
+            low = middle + 1
 
     return -1  # not found
+
+
+
+arr = [1, 2, 3, 4, 4, 5]
+print(binary_search(arr, -1))
